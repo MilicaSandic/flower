@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: relative;
+    padding: 0 100px;
+    min-height: 100vh;
+}
+
+.container::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: #333;
+    z-index: -2;
+}
+
+.container::after {
+    content: 'Flower';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    font-size: 18vw;
+    font-weight: 700;
+    color: #000;
+    opacity: 0.04;
+    z-index: -2;   
+}
+
+/**********  Header **********/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+header .logo {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+header .logo span {
+    color: #8ccb00;
+}
+
+
+header nav ul{
+    position: relative;
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+ins {
+    text-decoration: none;
+}
+
+header nav ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 4px 10px;
+    color: #333;
+}
+
+header nav ul li:nth-child(3) a,
+header nav ul li:nth-child(4) a {
+    color: #fff;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #8ccb00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+header nav ul li a:hover::before, 
+header nav ul li .active::before {
+    width: 40px;
+}
+
+.menu-icon {
+    display: none;
+}
+
+/********** Home **********/
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.content .bannerText {
+    position: relative;
+    max-width: 500px;
+    margin-right: 50px;
+}
+
+.content .bannerText div {
+    display: none;
+}
+
+.content .bannerText .active {
+    display: block;
+}
+
+.content .bannerText h2 {
+    font-size: 54px;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: #333;
+}
+
+.content .bannerText p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8em;
+    margin-top: 20px;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: none; 
+    background: none;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding: 15px; 
+    margin-top: 20px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: #8ccb00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+button:hover::before {
+    width: 100%;
+}
+
+.content .banner-img {
+    position: relative;
+    width: 440px;
+    height: 440px;
+    background: #000;
+}
+
+.content .banner-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.content .banner-img img.active {
+    opacity: 1;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.icons .sci, 
+.icons .controls {
+    position: relative;
+    display: flex;
+}
+
+.icons .sci li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+.icons .sci li img {
+    display: inline-block;
+    max-height: 24px;
+    transition: 0.5s ease-in-out;
+}
+
+.icons .sci li:hover img {
+    transform: translateY(-10px);
+}
+
+.icons .controls li {
+    list-style: none;
+    margin-left: 20px;
+    cursor: pointer;
+    filter: invert(1);
+    transition: 0.5s ease-in-out;
+}
+
+.icons .controls li:hover {
+    opacity: 0.5;
+}
+
+/**********  Menu **********/
+#flowers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:plum;
+}
+
+.flowers {
+    position: relative;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.flowers .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background:#fff;
+}
+
+.flowers .card:nth-child(even) {
+    flex-direction: column-reverse;
+}
+
+.flowers .card .imgBx {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #000;
+}
+
+.flowers .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flowers .card .box {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flowers .card .box div {
+    padding: 20px;
+    text-align: center;
+}
+
+/**********  About **********/
+.about {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    padding: 20px;
+}
+
+.about#about.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+.about .foto {
+    position: relative;
+    max-width: 800px;
+}
+
+.foto-text h2,
+#popup h2 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.foto-text img {
+    max-width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.foto-text a {
+    margin-top: 20px;
+}
+
+#popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0,.30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s; 
+    z-index: 1000;
+}
+
+#button-small::before {
+    width: 40px;
+}
+
+#button-small:hover::before {
+    width: 100%;
+}
+
+/********** Contact **********/
+#contact {
+    position: relative;
+    background-color: #333;
+    height: 100vh;  
+}
+
+#contact::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: url(img/11.jpg) no-repeat center/cover;
+    filter: opacity(0.3);
+}
+
+#contact::after {
+    content: 'Flower';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    font-size: 18vw;
+    font-weight: 700;
+    color: #fff;
+    opacity: 0.06;  
+}
+
+.contact {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.contact h2 {
+    color: #fff;
+    font-size: 46px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: #fff;
+    font-size: 18px;
+}
+
+.form {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+}
+
+
+.form_label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 20px;
+    color: #fff;
+    letter-spacing: 1px;
+    display: block;
+    transition: all .3s;
+}
+
+.form_input:placeholder-shown + .form_label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+}
+
+.form .radio-group {
+    width: 90%;
+    display: inline-block; 
+}
+
+.form .radio-input {
+    display: none;
+}
+
+.form .radio-label {
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 45px;
+}
+
+input {
+    width: 100%;
+    margin: 20px 0;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid #fff;
+    transition: all .3s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(black, .1);
+    border-bottom: 2px solid #8ccb00;
+}
+
+input:focus:invalid {
+    border-bottom: 2px solid #ff7730;
+}
+
+
+#msg {
+    margin-top: 60px;
+}
+
+#contact button {
+    color: #fff;
+}
+
+::-webkit-input-placeholder {
+    color: #eaeaea;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/********** Footer **********/
+footer {
+    justify-content: space-between;
+    text-align: center;
+}
+footer button {
+    margin-top: 30px;
+}
+
+footer .icons  {
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+footer .icons .sci {
+    margin: 0 auto;
+}
+
+footer p {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    letter-spacing: 2px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+

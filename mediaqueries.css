@@ -1,0 +1,128 @@
+@media (min-width: 1800px) {
+    .container {padding: 0px 200px;}
+    ins {color: #333;}
+}
+
+
+@media (max-width: 1016px) {
+    .container {padding: 20px 50px;}
+    .container::before {display: none;}
+
+    header {padding: 0;}
+
+    header nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0;
+        background: #fff;
+       
+        z-index: 10000;
+
+    }
+
+    header .active ul {
+        display: initial;
+    }
+
+    header nav ul li {
+        padding: 20px;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        color: #333 !important;
+        font-size: 36px;
+    }
+    header ul li a:hover::before, 
+    header ul li .active::before {
+        width: 100%;
+    }
+
+    header .active .menu-icon {
+        background: #fff url(img/multiplication.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    } 
+
+    .menu-icon {
+        display: initial;
+        position: fixed;
+        right: 50px;
+        cursor: pointer;
+        background: #fff url(img/menu-of-three-lines.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 34px;
+        height: 34px;
+        z-index: 100000;
+    } 
+
+    .icons .controls li {filter: invert(0);}
+
+    .content {
+        margin-top: 0;
+        flex-direction: column-reverse;
+    }
+    .content .bannerText h2 {font-size: 30px;}
+    .content .banner-img {
+        width: 100%;
+        height: 40vh;
+        margin: 20px 0;
+    }
+
+    .content .bannerText {
+        max-width: 100%;
+        padding-right: 0;
+    }  
+    
+    .flowers {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        margin: 50px;
+    }
+    .flowers .card {
+        flex-direction: row;
+        margin: 10px 0;
+    }
+    .flowers .card:nth-child(even) {flex-direction: row-reverse;}
+    .flowers .card .imgBx,
+    .flowers .card .box {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {padding: 20px 30px;}
+    
+    .menu-icon {right: 30px;}
+
+    .icons .controls li img { max-width: 40px;}
+
+    input { width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .flowers .card {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    .flowers .card:nth-child(even) {flex-direction: column;}
+    .flowers .card .imgBx,
+    .flowers .card .box {
+        width: 100%;
+    }
+    .flowers .card .box {
+        height: 200px;
+    }
+
+    input { width: 100%; }
+
+    #popup {
+        width: 450px;
+    }
+}
+
+
